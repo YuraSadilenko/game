@@ -1,0 +1,37 @@
+body {
+ background-color: $bg-color;
+
+}
+
+.container__block {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px; 
+    grid-gap: 20px 20px;
+}
+
+
+.block__item {
+    // background-color: $color-primary;
+    border-radius: 100px;
+    border: 2px solid $color-secondary;
+    width: 130px;
+    height: 130px;
+}
+
+.block__item:hover {
+    background-color: $color-secondary;
+}
+
+.block__item:not(:hover) {
+    transition: 8s;
+}
+
+:checked + .block__item {
+    background-color: $bg-color;
+    width: 100px;
+    height: 100px;
+    border: 2px solid $color-secondary;
+    border-radius: 100px;
+}
+
