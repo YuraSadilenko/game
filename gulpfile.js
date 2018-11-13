@@ -1,6 +1,5 @@
 var gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
-var watch = require('gulp-watch');
+var autoprefixer = require('gulp-autoprefixer');
 var server = require('gulp-server-livereload');
 var sass = require('gulp-sass');
  
@@ -10,8 +9,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('css'));
 });
  
-gulp.task('sass:watch', function () {
-  gulp.watch('sсss/main.scss', ['sass']);
+gulp.task('watch', function () {
+  gulp.watch('scss/**/*.scss', ['sass']);
 });
 
 gulp.task('autoprefix', function() {
@@ -21,11 +20,6 @@ gulp.task('autoprefix', function() {
         cascade: true
     }))
     .pipe(gulp.dest("css/main.css"))
-});
-
-gulp.task('watch', function() {
-    return watch('css/*.css', {ignorInitial: false})
-    .pipe(gulp.dest("./css/*.css"))
 });
 
 gulp.task('server', function() {
