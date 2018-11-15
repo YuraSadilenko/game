@@ -1,51 +1,75 @@
 * {
   margin: 0;
   padding: 0;
-  box-shadow: border-box; }
+  box-sizing: border-box; }
+
+/*Sizes for block__items*/
+html {
+  font-size: 62.5%; }
 
 body {
   background-color: #313131;
-  padding: 50px; }
+  padding: 10rem; }
 
-.check__label,
-.check__input {
+.check {
+  position: absolute;
   display: inline-block;
-  width: 100%;
-  text-align: center;
   font-family: "Segoe UI";
   font-size: 20px;
   color: #949494;
   font-weight: 900;
   font-style: italic; }
+  .check__label {
+    top: 4rem;
+    right: 50%; }
+  .check__input {
+    top: 5rem;
+    right: 48%; }
+  @media (max-width: 768px) {
+    .check__label {
+      top: 4rem;
+      right: 52%; }
+    .check__input {
+      top: 5rem;
+      right: 49%; } }
 
 .container__block {
   display: grid;
-  grid-template-columns: repeat(12, 60px);
-  grid-template-rows: repeat(5, 60px);
-  grid-gap: 13px 13px;
+  grid-template-columns: repeat(12, 5rem);
+  grid-template-rows: repeat(5, 5rem);
+  grid-gap: 1.3rem;
   justify-content: center; }
 
 :checked + .container__block .block__item {
   background-color: transparent;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  border-radius: 100px;
   border: 2px solid #ffee00;
-  width: 130px;
-  height: 130px; }
+  height: 13rem;
+  width: 13rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  border-radius: 10rem; }
+  :checked + .container__block .block__item:hover {
+    background-color: #ffee00; }
 
-:checked + .container__block .block__item:hover {
-  background-color: #ffee00; }
+@media (max-width: 768px) {
+  .container__block {
+    grid-template-columns: repeat(12, 3rem);
+    grid-template-rows: repeat(5, 3rem);
+    grid-gap: 0.5rem; }
+  :checked + .container__block .block__item {
+    height: 8rem;
+    width: 8rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    border-radius: 10rem; } }
 
 .block__item {
-  width: 60px;
-  height: 60px;
   border: 0;
   border-radius: 0;
   background-color: black;
   transition: background-color 5s; }
-
-.block__item:hover {
-  background-color: #ffee00;
-  transition: 0s; }
+  .block__item:hover {
+    background-color: #ffee00;
+    transition: 0s; }

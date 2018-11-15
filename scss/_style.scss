@@ -1,49 +1,77 @@
-body {
- background-color: $bg-color;
- padding: 50px;
+.check {
+    position: absolute;
+    display: inline-block;
+    @include font('Segoe UI', 20px, $font-color, 900, italic);
+
+    &__label {
+        top: 4rem;
+        right: 50%;
+    }
+
+    &__input {
+        top: 5rem;
+        right: 48%;
+    }
+    
+    @media (max-width: 768px) {
+
+        &__label {
+            top: 4rem;
+            right: 52%;
+        }
+    
+        &__input {
+            top: 5rem;
+            right: 49%;
+        }
+    }
 }
 
-.check__label, 
-.check__input {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    @include font('Segoe UI', 20px, $font-color, 900, italic);
-}
+
 
 .container__block {
     display: grid;
-    grid-template-columns: repeat(12, 60px);
-    grid-template-rows: repeat(5, 60px); 
-    grid-gap: 13px 13px;
+    grid-template-columns: repeat(12, $item-size-middle);
+    grid-template-rows: repeat(5, $item-size-middle); 
+    grid-gap: $item-gap-middle;
     justify-content: center;
 }
 
 :checked + .container__block .block__item {
     background-color: transparent;
-    @include radius(100px);
     border: 2px solid $color-secondary;
-    width: 130px;
-    height: 130px;
+    @include round(13rem, 13rem, 10rem,);
+
+    &:hover {
+        background-color: $color-secondary;
+    }
 }
 
-:checked + .container__block .block__item:hover {
-    background-color: $color-secondary;
+@media (max-width:768px) {
+    .container__block {
+        grid-template-columns: repeat(12, $item-size-small);
+        grid-template-rows: repeat(5, $item-size-small); 
+        grid-gap: $item-gap-small;
+
+    }
+
+    :checked + .container__block .block__item {
+        @include round(8rem, 8rem, 10rem,);
+    }
 }
 
 .block__item {
-    width: 60px;  
-    height: 60px;
     border: 0;
     border-radius: 0;
     background-color: $color-primary;
     transition: background-color 5s;
+
+    &:hover {
+        background-color: $color-secondary;
+        transition: 0s;
+    }
 }
 
-.block__item:hover {
-    background-color: $color-secondary;
-    transition: 0s;
-}
 
 
 

@@ -1,9 +1,4 @@
-@mixin radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;  
-}
+
 
 @mixin font($ff, $fs, $fc, $fw, $ft) {    
     font-family: $ff;
@@ -11,4 +6,13 @@
     color: $fc;
     font-weight: $fw;
     font-style: $ft;
+}
+
+@mixin round($round-w, $round-h, $round-r) {
+    height: $round-h;
+    width: $round-w;
+    -webkit-border-radius: $round-r;
+    -moz-border-radius: $round-r;
+    -ms-border-radius: $round-r;
+    border-radius: $round-r;  
 }
