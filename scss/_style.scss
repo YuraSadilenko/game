@@ -37,14 +37,13 @@ body {
     border: 0;
     border-radius: 0;
     background-color: $color-primary;
+    transition: background-color 5s;
 }
 
 .block__item:hover {
     background-color: $color-secondary;
+    transition: 0s;
 }
 
-.block__item:not(:hover) {
-    transition: background-color 5s;
-}
 
 

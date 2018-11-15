@@ -43,10 +43,9 @@ body {
   height: 60px;
   border: 0;
   border-radius: 0;
-  background-color: black; }
+  background-color: black;
+  transition: background-color 5s; }
 
 .block__item:hover {
-  background-color: #ffee00; }
-
-.block__item:not(:hover) {
-  transition: background-color 5s; }
+  background-color: #ffee00;
+  transition: 0s; }
