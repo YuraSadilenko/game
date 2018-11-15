@@ -1,18 +1,35 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-shadow: border-box; }
 
 body {
-  background-color: #313131; }
+  background-color: #313131;
+  padding: 50px; }
+
+.check__label,
+.check__input {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 20px;
+  color: #949494;
+  font-weight: 900;
+  font-style: italic; }
 
 .container__block {
   display: grid;
   grid-template-columns: repeat(12, 60px);
   grid-template-rows: repeat(5, 60px);
-  grid-gap: 20px 20px; }
+  grid-gap: 13px 13px;
+  justify-content: center; }
 
 :checked + .container__block .block__item {
   background-color: transparent;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
   border-radius: 100px;
   border: 2px solid #ffee00;
   width: 130px;

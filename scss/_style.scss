@@ -1,17 +1,27 @@
 body {
  background-color: $bg-color;
+ padding: 50px;
+}
+
+.check__label, 
+.check__input {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    @include font('Segoe UI', 20px, $font-color, 900, italic);
 }
 
 .container__block {
     display: grid;
     grid-template-columns: repeat(12, 60px);
     grid-template-rows: repeat(5, 60px); 
-    grid-gap: 20px 20px;
+    grid-gap: 13px 13px;
+    justify-content: center;
 }
 
 :checked + .container__block .block__item {
     background-color: transparent;
-    border-radius: 100px;
+    @include radius(100px);
     border: 2px solid $color-secondary;
     width: 130px;
     height: 130px;
@@ -36,4 +46,5 @@ body {
 .block__item:not(:hover) {
     transition: background-color 5s;
 }
+
 
