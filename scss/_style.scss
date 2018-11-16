@@ -40,7 +40,7 @@
 :checked + .container__block .block__item {
     background-color: transparent;
     border: 2px solid $color-secondary;
-    @include round(13rem, 13rem, 10rem,);
+    @include round(13rem, 13rem, 10rem);
 
     &:hover {
         background-color: $color-secondary;
@@ -56,7 +56,7 @@
     }
 
     :checked + .container__block .block__item {
-        @include round(8rem, 8rem, 10rem,);
+        @include round(8rem, 8rem, 10rem);
     }
 }
 
